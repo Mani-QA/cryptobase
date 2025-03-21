@@ -1,14 +1,17 @@
 
 {
   "mockPortfolio": {
-    "bitcoin": 0.5,
-    "ethereum": 2.3,
+    "bitcoin": 1.14,
+    "ethereum": 12.32,
     "cardano": 500,
-    "solana": 10,
-    "polkadot": 30,
-    "avalanche": 15,
-    "chainlink": 40,
-    "polygon": 100
+    "solana": 97.65,
+    "polkadot": 353,
+    "avalanche": 186,
+    "chainlink": 276.62,
+    "polygon": 5877,
+    "xrp": 3057.9,
+    "near": 979.64,
+    "render": 779.76
   },
   "mockCoins": [
     {
@@ -22,8 +25,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 0.5,
-      "total_value": 19920.11
+      "quantity": 1.14,
+      "total_value": 45417.84
     },
     {
       "id": "ethereum",
@@ -36,8 +39,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 2.3,
-      "total_value": 4839.94
+      "quantity": 12.32,
+      "total_value": 25925.22
     },
     {
       "id": "cardano",
@@ -64,8 +67,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 10,
-      "total_value": 1042.3
+      "quantity": 97.65,
+      "total_value": 10178.06
     },
     {
       "id": "polkadot",
@@ -78,8 +81,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 30,
-      "total_value": 206.7
+      "quantity": 353,
+      "total_value": 2432.17
     },
     {
       "id": "avalanche",
@@ -92,8 +95,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 15,
-      "total_value": 332.55
+      "quantity": 186,
+      "total_value": 4123.62
     },
     {
       "id": "chainlink",
@@ -106,8 +109,8 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 40,
-      "total_value": 556.8
+      "quantity": 276.62,
+      "total_value": 3850.55
     },
     {
       "id": "polygon",
@@ -120,8 +123,50 @@
       "sparkline_in_7d": {
         "price": []
       },
-      "quantity": 100,
-      "total_value": 82
+      "quantity": 5877,
+      "total_value": 4819.14
+    },
+    {
+      "id": "xrp",
+      "symbol": "xrp",
+      "name": "XRP",
+      "image": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
+      "current_price": 0.53,
+      "price_change_percentage_24h": 1.5,
+      "price_change_percentage_7d_in_currency": 3.8,
+      "sparkline_in_7d": {
+        "price": []
+      },
+      "quantity": 3057.9,
+      "total_value": 1620.69
+    },
+    {
+      "id": "near",
+      "symbol": "near",
+      "name": "NEAR Protocol",
+      "image": "https://assets.coingecko.com/coins/images/10365/large/near.jpg",
+      "current_price": 3.21,
+      "price_change_percentage_24h": 2.7,
+      "price_change_percentage_7d_in_currency": 5.6,
+      "sparkline_in_7d": {
+        "price": []
+      },
+      "quantity": 979.64,
+      "total_value": 3144.64
+    },
+    {
+      "id": "render-token",
+      "symbol": "rndr",
+      "name": "Render",
+      "image": "https://assets.coingecko.com/coins/images/11636/large/rndr.png",
+      "current_price": 4.86,
+      "price_change_percentage_24h": 3.4,
+      "price_change_percentage_7d_in_currency": 8.9,
+      "sparkline_in_7d": {
+        "price": []
+      },
+      "quantity": 779.76,
+      "total_value": 3789.63
     }
   ]
 }
