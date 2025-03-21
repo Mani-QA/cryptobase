@@ -1,6 +1,7 @@
 
 import { useEffect, useState } from "react";
-import { Coin, PortfolioSummary, fetchCoinData } from "@/utils/api";
+import { Coin, fetchCoinData } from "@/utils/api";
+import type { PortfolioSummary as PortfolioSummaryType } from "@/utils/api";
 import { toast } from "sonner";
 import ThemeToggle from "@/components/ThemeToggle";
 import PortfolioSummary from "@/components/PortfolioSummary";
@@ -14,7 +15,7 @@ const REFRESH_INTERVAL = 300000; // 5 minutes
 const Index = () => {
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
-  const [portfolioData, setPortfolioData] = useState<PortfolioSummary | null>(null);
+  const [portfolioData, setPortfolioData] = useState<PortfolioSummaryType | null>(null);
   const [filteredCoins, setFilteredCoins] = useState<Coin[]>([]);
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState<SortOption>("value-high");
@@ -222,7 +223,6 @@ const Index = () => {
                 key={coin.id}
                 coin={coin}
                 className={`animate-fade-up opacity-0`}
-                style={{ animationDelay: `${150 + index * 50}ms` }}
               />
             ))}
           </div>

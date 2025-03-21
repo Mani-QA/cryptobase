@@ -9,9 +9,10 @@ import { ArrowDown, ArrowUp, ExternalLink } from "lucide-react";
 interface CoinCardProps {
   coin: Coin;
   className?: string;
+  style?: React.CSSProperties;
 }
 
-const CoinCard = ({ coin, className = "" }: CoinCardProps) => {
+const CoinCard = ({ coin, className = "", style }: CoinCardProps) => {
   const [expanded, setExpanded] = useState(false);
   const isPositive = (coin.price_change_percentage_24h || 0) >= 0;
   const changeColor = isPositive ? "text-positive" : "text-negative";
@@ -24,6 +25,7 @@ const CoinCard = ({ coin, className = "" }: CoinCardProps) => {
   return (
     <Card 
       className={`overflow-hidden transition-all duration-300 hover:shadow-md ${className}`}
+      style={style}
     >
       <CardContent 
         className="p-5 cursor-pointer"
