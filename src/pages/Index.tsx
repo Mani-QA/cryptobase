@@ -1,4 +1,3 @@
-
 import { useEffect, useState } from "react";
 import { Coin, fetchCoinData } from "@/utils/api";
 import type { PortfolioSummary as PortfolioSummaryType } from "@/utils/api";
@@ -7,8 +6,15 @@ import ThemeToggle from "@/components/ThemeToggle";
 import PortfolioSummary from "@/components/PortfolioSummary";
 import CoinCard from "@/components/CoinCard";
 import SearchSort, { SortOption } from "@/components/SearchSort";
-import { formatDate } from "@/utils/formatters";
-import { RefreshCw, Loader2 } from "lucide-react";
+import { formatDate, convertToCAD } from "@/utils/formatters";
+import { RefreshCw, Loader2, DollarSign } from "lucide-react";
+import { Button } from "@/components/ui/button";
+import { 
+  DropdownMenu, 
+  DropdownMenuTrigger, 
+  DropdownMenuContent, 
+  DropdownMenuItem 
+} from "@/components/ui/dropdown-menu";
 
 const REFRESH_INTERVAL = 300000; // 5 minutes
 
@@ -20,6 +26,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState<SortOption>("value-high");
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
+  const [currencyType, setCurrencyType] = useState<'USD' | 'CAD'>('USD');
 
   // Fetch portfolio data
   const fetchPortfolioData = async (showRefreshing = false) => {
@@ -163,6 +170,27 @@ const Index = () => {
     }
   };
 
+  // Handle currency change
+  const handleCurrencyChange = (currency: 'USD' | 'CAD') => {
+    setCurrencyType(currency);
+    toast.success(`Currency changed to ${currency}`);
+  };
+
+  // Calculate values based on selected currency
+  const getTotalValue = () => {
+    if (!portfolioData) return 0;
+    return currencyType === 'CAD' 
+      ? convertToCAD(portfolioData.totalValue) 
+      : portfolioData.totalValue;
+  };
+
+  const getDailyChange = () => {
+    if (!portfolioData) return 0;
+    return currencyType === 'CAD' 
+      ? convertToCAD(portfolioData.dailyChange) 
+      : portfolioData.dailyChange;
+  };
+
   // Loading state
   if (loading) {
     return (
@@ -180,6 +208,22 @@ const Index = () => {
         <div className="container flex justify-between items-center py-4">
           <h1 className="text-xl font-bold">Crypto Portfolio</h1>
           <div className="flex items-center gap-4">
+            <DropdownMenu>
+              <DropdownMenuTrigger asChild>
+                <Button variant="outline" size="sm" className="gap-2">
+                  <DollarSign className="w-4 h-4" />
+                  {currencyType}
+                </Button>
+              </DropdownMenuTrigger>
+              <DropdownMenuContent align="end">
+                <DropdownMenuItem onClick={() => handleCurrencyChange('USD')}>
+                  USD
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCurrencyChange('CAD')}>
+                  CAD
+                </DropdownMenuItem>
+              </DropdownMenuContent>
+            </DropdownMenu>
             <button
               onClick={handleRefresh}
               disabled={refreshing}
@@ -200,13 +244,13 @@ const Index = () => {
       <main className="container py-6 space-y-6 animate-fade-in">
         {portfolioData && (
           <PortfolioSummary
-            totalValue={portfolioData.totalValue}
-            dailyChange={portfolioData.dailyChange}
+            totalValue={getTotalValue()}
+            dailyChange={getDailyChange()}
             dailyChangePercentage={portfolioData.dailyChangePercentage}
             coins={portfolioData.coins}
             onExport={handleExport}
             className="animate-fade-up opacity-0"
-            // Safari needs explicit opacity-0 with animate-fade-up for the animation
+            currencyType={currencyType}
           />
         )}
 
@@ -223,6 +267,8 @@ const Index = () => {
                 key={coin.id}
                 coin={coin}
                 className={`animate-fade-up opacity-0`}
+                totalPortfolioValue={portfolioData?.totalValue || 0}
+                currencyType={currencyType}
               />
             ))}
           </div>

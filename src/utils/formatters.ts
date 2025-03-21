@@ -1,9 +1,9 @@
 
 // Format numbers to currency string
-export const formatCurrency = (value: number): string => {
+export const formatCurrency = (value: number, currency: 'USD' | 'CAD' = 'USD'): string => {
   return new Intl.NumberFormat('en-US', {
     style: 'currency',
-    currency: 'USD',
+    currency: currency,
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   }).format(value);
@@ -50,4 +50,12 @@ export const formatDate = (date: Date): string => {
     day: 'numeric',
     year: 'numeric',
   });
+};
+
+// Convert USD to CAD
+export const convertToCAD = (usdValue: number): number => {
+  // Using a fixed exchange rate of 1 USD = 1.36 CAD for simplicity
+  // In a real app, this would come from an API
+  const exchangeRate = 1.36;
+  return usdValue * exchangeRate;
 };

@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Coin } from "@/utils/api";
-import { formatCurrency, formatPercentage, formatCoinQuantity } from "@/utils/formatters";
+import { formatCurrency, formatPercentage, formatCoinQuantity, convertToCAD } from "@/utils/formatters";
 import SparklineChart from "./SparklineChart";
 import { ArrowDown, ArrowUp, ExternalLink } from "lucide-react";
 
@@ -10,12 +10,34 @@ interface CoinCardProps {
   coin: Coin;
   className?: string;
   style?: React.CSSProperties;
+  totalPortfolioValue: number;
+  currencyType: 'USD' | 'CAD';
 }
 
-const CoinCard = ({ coin, className = "", style }: CoinCardProps) => {
+const CoinCard = ({ 
+  coin, 
+  className = "", 
+  style, 
+  totalPortfolioValue,
+  currencyType
+}: CoinCardProps) => {
   const [expanded, setExpanded] = useState(false);
   const isPositive = (coin.price_change_percentage_24h || 0) >= 0;
   const changeColor = isPositive ? "text-positive" : "text-negative";
+  
+  // Calculate portfolio percentage
+  const portfolioPercentage = totalPortfolioValue > 0 
+    ? ((coin.total_value || 0) / totalPortfolioValue) * 100 
+    : 0;
+  
+  // Convert values to selected currency
+  const currentPrice = currencyType === 'CAD' 
+    ? convertToCAD(coin.current_price) 
+    : coin.current_price;
+  
+  const totalValue = currencyType === 'CAD' 
+    ? convertToCAD(coin.total_value || 0) 
+    : (coin.total_value || 0);
   
   // Animation classes based on expanded state
   const detailsClass = expanded
@@ -45,7 +67,7 @@ const CoinCard = ({ coin, className = "", style }: CoinCardProps) => {
             </div>
           </div>
           <div className="text-right">
-            <p className="font-semibold">{formatCurrency(coin.current_price)}</p>
+            <p className="font-semibold">{formatCurrency(currentPrice, currencyType)}</p>
             <p className={`text-sm font-medium flex items-center justify-end gap-1 ${changeColor}`}>
               {isPositive ? (
                 <ArrowUp className="w-3 h-3" />
@@ -77,7 +99,7 @@ const CoinCard = ({ coin, className = "", style }: CoinCardProps) => {
           </div>
           <div className="text-right">
             <p className="text-muted-foreground text-xs">Value</p>
-            <p className="font-medium">{formatCurrency(coin.total_value || 0)}</p>
+            <p className="font-medium">{formatCurrency(totalValue, currencyType)}</p>
           </div>
         </div>
 
@@ -94,8 +116,7 @@ const CoinCard = ({ coin, className = "", style }: CoinCardProps) => {
               <div className="text-right">
                 <p className="text-muted-foreground text-xs">Portfolio %</p>
                 <p className="font-medium">
-                  {/* Just a placeholder percentage for now */}
-                  {((coin.total_value || 0) / 27195.4 * 100).toFixed(1)}%
+                  {portfolioPercentage.toFixed(2)}%
                 </p>
               </div>
             </div>
