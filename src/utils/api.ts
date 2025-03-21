@@ -1,5 +1,6 @@
 
 import { toast } from "sonner";
+import coinsData from "@/data/coins.json";
 
 export interface Coin {
   id: string;
@@ -23,17 +24,8 @@ export interface PortfolioSummary {
   coins: Coin[];
 }
 
-// Mock portfolio data for demonstration
-const mockPortfolio: { [key: string]: number } = {
-  bitcoin: 0.5,
-  ethereum: 2.3,
-  cardano: 500,
-  solana: 10,
-  polkadot: 30,
-  avalanche: 15,
-  chainlink: 40,
-  polygon: 100,
-};
+// Get mock portfolio data from JSON file
+const mockPortfolio: { [key: string]: number } = coinsData.mockPortfolio;
 
 // Function to fetch coin data from CoinGecko API
 export const fetchCoinData = async (): Promise<PortfolioSummary> => {
@@ -88,120 +80,18 @@ export const fetchCoinData = async (): Promise<PortfolioSummary> => {
 
 // Generate mock data for testing or when API fails
 const generateMockData = (): PortfolioSummary => {
-  const mockCoins: Coin[] = [
-    {
-      id: "bitcoin",
-      symbol: "btc",
-      name: "Bitcoin",
-      image: "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
-      current_price: 39840.21,
-      price_change_percentage_24h: 2.1,
-      price_change_percentage_7d_in_currency: 5.3,
+  // Get mock coins from JSON file and generate sparkline data
+  const mockCoins: Coin[] = coinsData.mockCoins.map(coin => {
+    let basePrice = coin.current_price;
+    let variation = basePrice * 0.1; // 10% variation
+    
+    return {
+      ...coin,
       sparkline_in_7d: {
-        price: generateSparklineData(39000, 3000, 7),
-      },
-      quantity: 0.5,
-      total_value: 19920.11,
-    },
-    {
-      id: "ethereum",
-      symbol: "eth",
-      name: "Ethereum",
-      image: "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
-      current_price: 2104.32,
-      price_change_percentage_24h: 3.2,
-      price_change_percentage_7d_in_currency: 7.5,
-      sparkline_in_7d: {
-        price: generateSparklineData(2000, 200, 7),
-      },
-      quantity: 2.3,
-      total_value: 4839.94,
-    },
-    {
-      id: "cardano",
-      symbol: "ada",
-      name: "Cardano",
-      image: "https://assets.coingecko.com/coins/images/975/large/cardano.png",
-      current_price: 0.43,
-      price_change_percentage_24h: -1.2,
-      price_change_percentage_7d_in_currency: -3.1,
-      sparkline_in_7d: {
-        price: generateSparklineData(0.45, 0.05, 7),
-      },
-      quantity: 500,
-      total_value: 215,
-    },
-    {
-      id: "solana",
-      symbol: "sol",
-      name: "Solana",
-      image: "https://assets.coingecko.com/coins/images/4128/large/solana.png",
-      current_price: 104.23,
-      price_change_percentage_24h: 5.7,
-      price_change_percentage_7d_in_currency: 12.3,
-      sparkline_in_7d: {
-        price: generateSparklineData(95, 15, 7),
-      },
-      quantity: 10,
-      total_value: 1042.3,
-    },
-    {
-      id: "polkadot",
-      symbol: "dot",
-      name: "Polkadot",
-      image: "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
-      current_price: 6.89,
-      price_change_percentage_24h: -0.8,
-      price_change_percentage_7d_in_currency: 2.2,
-      sparkline_in_7d: {
-        price: generateSparklineData(6.7, 0.6, 7),
-      },
-      quantity: 30,
-      total_value: 206.7,
-    },
-    {
-      id: "avalanche",
-      symbol: "avax",
-      name: "Avalanche",
-      image: "https://assets.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png",
-      current_price: 22.17,
-      price_change_percentage_24h: 4.1,
-      price_change_percentage_7d_in_currency: 9.2,
-      sparkline_in_7d: {
-        price: generateSparklineData(20, 3, 7),
-      },
-      quantity: 15,
-      total_value: 332.55,
-    },
-    {
-      id: "chainlink",
-      symbol: "link",
-      name: "Chainlink",
-      image: "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
-      current_price: 13.92,
-      price_change_percentage_24h: 1.3,
-      price_change_percentage_7d_in_currency: 4.2,
-      sparkline_in_7d: {
-        price: generateSparklineData(13, 1.5, 7),
-      },
-      quantity: 40,
-      total_value: 556.8,
-    },
-    {
-      id: "polygon",
-      symbol: "matic",
-      name: "Polygon",
-      image: "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png",
-      current_price: 0.82,
-      price_change_percentage_24h: -2.3,
-      price_change_percentage_7d_in_currency: -1.1,
-      sparkline_in_7d: {
-        price: generateSparklineData(0.85, 0.08, 7),
-      },
-      quantity: 100,
-      total_value: 82,
-    },
-  ];
+        price: generateSparklineData(basePrice, variation, 7)
+      }
+    };
+  });
 
   // Calculate total value and changes
   let totalValue = 0;
