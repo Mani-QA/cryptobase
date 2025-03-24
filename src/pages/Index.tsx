@@ -1,3 +1,4 @@
+
 import { useEffect, useState } from "react";
 import { Coin, fetchCoinData } from "@/utils/api";
 import type { PortfolioSummary as PortfolioSummaryType } from "@/utils/api";
@@ -6,8 +7,8 @@ import ThemeToggle from "@/components/ThemeToggle";
 import PortfolioSummary from "@/components/PortfolioSummary";
 import CoinCard from "@/components/CoinCard";
 import SearchSort, { SortOption } from "@/components/SearchSort";
-import { formatDate, convertToCAD } from "@/utils/formatters";
-import { RefreshCw, Loader2, DollarSign } from "lucide-react";
+import { formatDate, convertToCAD, convertToINR } from "@/utils/formatters";
+import { RefreshCw, Loader2, DollarSign, IndianRupee } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { 
   DropdownMenu, 
@@ -19,6 +20,15 @@ import {
 const REFRESH_INTERVAL = 300000; // 5 minutes
 
 const Index = () => {
+  // Update document title and metadata
+  useEffect(() => {
+    document.title = "Crypto Portfolio Tracker";
+    const metaDescription = document.querySelector('meta[name="description"]');
+    if (metaDescription) {
+      metaDescription.setAttribute("content", "Track your cryptocurrency portfolio with real-time updates and multi-currency support");
+    }
+  }, []);
+
   const [loading, setLoading] = useState(true);
   const [refreshing, setRefreshing] = useState(false);
   const [portfolioData, setPortfolioData] = useState<PortfolioSummaryType | null>(null);
@@ -26,7 +36,7 @@ const Index = () => {
   const [searchTerm, setSearchTerm] = useState("");
   const [sortOption, setSortOption] = useState<SortOption>("value-high");
   const [lastUpdated, setLastUpdated] = useState<Date>(new Date());
-  const [currencyType, setCurrencyType] = useState<'USD' | 'CAD'>('USD');
+  const [currencyType, setCurrencyType] = useState<'USD' | 'CAD' | 'INR'>('USD');
 
   // Fetch portfolio data
   const fetchPortfolioData = async (showRefreshing = false) => {
@@ -171,7 +181,7 @@ const Index = () => {
   };
 
   // Handle currency change
-  const handleCurrencyChange = (currency: 'USD' | 'CAD') => {
+  const handleCurrencyChange = (currency: 'USD' | 'CAD' | 'INR') => {
     setCurrencyType(currency);
     toast.success(`Currency changed to ${currency}`);
   };
@@ -179,16 +189,32 @@ const Index = () => {
   // Calculate values based on selected currency
   const getTotalValue = () => {
     if (!portfolioData) return 0;
-    return currencyType === 'CAD' 
-      ? convertToCAD(portfolioData.totalValue) 
-      : portfolioData.totalValue;
+    if (currencyType === 'CAD') 
+      return convertToCAD(portfolioData.totalValue);
+    else if (currencyType === 'INR')
+      return convertToINR(portfolioData.totalValue);
+    else
+      return portfolioData.totalValue;
   };
 
   const getDailyChange = () => {
     if (!portfolioData) return 0;
-    return currencyType === 'CAD' 
-      ? convertToCAD(portfolioData.dailyChange) 
-      : portfolioData.dailyChange;
+    if (currencyType === 'CAD') 
+      return convertToCAD(portfolioData.dailyChange);
+    else if (currencyType === 'INR')
+      return convertToINR(portfolioData.dailyChange);
+    else
+      return portfolioData.dailyChange;
+  };
+
+  // Get currency icon
+  const getCurrencyIcon = () => {
+    switch (currencyType) {
+      case 'INR':
+        return <IndianRupee className="w-4 h-4" />;
+      default:
+        return <DollarSign className="w-4 h-4" />;
+    }
   };
 
   // Loading state
@@ -211,7 +237,7 @@ const Index = () => {
             <DropdownMenu>
               <DropdownMenuTrigger asChild>
                 <Button variant="outline" size="sm" className="gap-2">
-                  <DollarSign className="w-4 h-4" />
+                  {getCurrencyIcon()}
                   {currencyType}
                 </Button>
               </DropdownMenuTrigger>
@@ -221,6 +247,9 @@ const Index = () => {
                 </DropdownMenuItem>
                 <DropdownMenuItem onClick={() => handleCurrencyChange('CAD')}>
                   CAD
+                </DropdownMenuItem>
+                <DropdownMenuItem onClick={() => handleCurrencyChange('INR')}>
+                  INR
                 </DropdownMenuItem>
               </DropdownMenuContent>
             </DropdownMenu>

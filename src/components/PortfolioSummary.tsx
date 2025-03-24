@@ -13,6 +13,7 @@ interface PortfolioSummaryProps {
   coins: Coin[];
   onExport: () => void;
   className?: string;
+  currencyType: 'USD' | 'CAD' | 'INR';
 }
 
 const PortfolioSummary = ({
@@ -22,6 +23,7 @@ const PortfolioSummary = ({
   coins,
   onExport,
   className = "",
+  currencyType,
 }: PortfolioSummaryProps) => {
   const isPositive = dailyChangePercentage >= 0;
   const changeColor = isPositive ? "text-positive" : "text-negative";
@@ -34,7 +36,7 @@ const PortfolioSummary = ({
             <h2 className="text-sm font-medium text-muted-foreground mb-1">Total Portfolio Value</h2>
             <div className="flex items-baseline gap-3">
               <h1 className="text-3xl font-bold tracking-tight">
-                {formatCurrency(totalValue)}
+                {formatCurrency(totalValue, currencyType)}
               </h1>
               <div className={`flex items-center gap-1 font-medium ${changeColor}`}>
                 {isPositive ? (
@@ -47,7 +49,7 @@ const PortfolioSummary = ({
               </div>
             </div>
             <p className={`text-sm mt-1 ${changeColor}`}>
-              {formatCurrency(dailyChange)} today
+              {formatCurrency(dailyChange, currencyType)} today
             </p>
           </div>
 
@@ -68,6 +70,7 @@ const PortfolioSummary = ({
               coins={coins}
               size={180}
               className="animate-fade-in mt-2"
+              currencyType={currencyType}
             />
           </div>
           <div className="lg:col-span-3">

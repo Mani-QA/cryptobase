@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { Card, CardContent } from "@/components/ui/card";
 import { Coin } from "@/utils/api";
-import { formatCurrency, formatPercentage, formatCoinQuantity, convertToCAD } from "@/utils/formatters";
+import { formatCurrency, formatPercentage, formatCoinQuantity, convertToCAD, convertToINR } from "@/utils/formatters";
 import SparklineChart from "./SparklineChart";
 import { ArrowDown, ArrowUp, ExternalLink } from "lucide-react";
 
@@ -11,7 +11,7 @@ interface CoinCardProps {
   className?: string;
   style?: React.CSSProperties;
   totalPortfolioValue: number;
-  currencyType: 'USD' | 'CAD';
+  currencyType: 'USD' | 'CAD' | 'INR';
 }
 
 const CoinCard = ({ 
@@ -31,13 +31,16 @@ const CoinCard = ({
     : 0;
   
   // Convert values to selected currency
-  const currentPrice = currencyType === 'CAD' 
-    ? convertToCAD(coin.current_price) 
-    : coin.current_price;
+  let currentPrice = coin.current_price;
+  let totalValue = coin.total_value || 0;
   
-  const totalValue = currencyType === 'CAD' 
-    ? convertToCAD(coin.total_value || 0) 
-    : (coin.total_value || 0);
+  if (currencyType === 'CAD') {
+    currentPrice = convertToCAD(currentPrice);
+    totalValue = convertToCAD(totalValue);
+  } else if (currencyType === 'INR') {
+    currentPrice = convertToINR(currentPrice);
+    totalValue = convertToINR(totalValue);
+  }
   
   // Animation classes based on expanded state
   const detailsClass = expanded

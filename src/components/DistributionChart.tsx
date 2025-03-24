@@ -1,12 +1,28 @@
 
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Coin } from "@/utils/api";
+import {
+  Tooltip,
+  TooltipContent,
+  TooltipProvider,
+  TooltipTrigger,
+} from "@/components/ui/tooltip";
+import { formatPercentage } from "@/utils/formatters";
 
 interface DistributionChartProps {
   coins: Coin[];
   size?: number;
   innerRadius?: number;
   className?: string;
+  currencyType?: 'USD' | 'CAD' | 'INR';
+}
+
+interface ChartSegment {
+  coin: Coin;
+  startAngle: number;
+  endAngle: number;
+  percentage: number;
+  color: string;
 }
 
 const DistributionChart: React.FC<DistributionChartProps> = ({
@@ -14,9 +30,13 @@ const DistributionChart: React.FC<DistributionChartProps> = ({
   size = 250,
   innerRadius = 0.6,
   className = "",
+  currencyType = 'USD',
 }) => {
   const canvasRef = useRef<HTMLCanvasElement>(null);
+  const [segments, setSegments] = useState<ChartSegment[]>([]);
+  const [hoveredSegment, setHoveredSegment] = useState<ChartSegment | null>(null);
 
+  // Draw the chart
   useEffect(() => {
     if (!canvasRef.current || !coins.length) return;
 
@@ -69,16 +89,19 @@ const DistributionChart: React.FC<DistributionChartProps> = ({
       .filter((coin) => (coin.total_value || 0) > 0)
       .sort((a, b) => (b.total_value || 0) - (a.total_value || 0));
 
-    // Draw donut chart segments
+    // Draw donut chart segments and store segment data
     let startAngle = -Math.PI / 2; // Start at top (12 o'clock position)
+    const newSegments: ChartSegment[] = [];
     
     sortedCoins.forEach((coin, index) => {
       if (!coin.total_value) return;
       
       const value = coin.total_value;
       const portionOfTotal = value / totalValue;
+      const percentage = portionOfTotal * 100;
       const angleSize = portionOfTotal * Math.PI * 2;
       const endAngle = startAngle + angleSize;
+      const color = colorPalette[index % colorPalette.length];
       
       // Draw segment
       ctx.beginPath();
@@ -88,11 +111,22 @@ const DistributionChart: React.FC<DistributionChartProps> = ({
       ctx.closePath();
       
       // Fill with color
-      ctx.fillStyle = colorPalette[index % colorPalette.length];
+      ctx.fillStyle = color;
       ctx.fill();
+      
+      // Store segment data
+      newSegments.push({
+        coin,
+        startAngle,
+        endAngle,
+        percentage,
+        color
+      });
       
       startAngle = endAngle;
     });
+    
+    setSegments(newSegments);
 
     // Draw inner circle (donut hole)
     ctx.beginPath();
@@ -103,13 +137,81 @@ const DistributionChart: React.FC<DistributionChartProps> = ({
     ctx.fill();
   }, [coins, size, innerRadius]);
 
+  // Handle mouse move for tooltips
+  const handleMouseMove = (e: React.MouseEvent<HTMLCanvasElement>) => {
+    if (!canvasRef.current || segments.length === 0) return;
+
+    const canvas = canvasRef.current;
+    const rect = canvas.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    
+    const centerX = size / 2;
+    const centerY = size / 2;
+    const radius = Math.min(centerX, centerY);
+    const innerRadiusValue = radius * innerRadius;
+    
+    // Calculate distance from center
+    const dx = x - centerX;
+    const dy = y - centerY;
+    const distance = Math.sqrt(dx * dx + dy * dy);
+    
+    // If inside the donut (not in the hole and not outside)
+    if (distance > innerRadiusValue && distance < radius) {
+      // Calculate angle of mouse position
+      let angle = Math.atan2(dy, dx);
+      
+      // Adjust angle to match chart starting position (-π/2 or 12 o'clock)
+      if (angle < -Math.PI / 2) {
+        angle += Math.PI * 2;
+      }
+      
+      // Find segment that contains this angle
+      const segment = segments.find(seg => {
+        const adjustedStartAngle = seg.startAngle < -Math.PI / 2 ? seg.startAngle + Math.PI * 2 : seg.startAngle;
+        const adjustedEndAngle = seg.endAngle < -Math.PI / 2 ? seg.endAngle + Math.PI * 2 : seg.endAngle;
+        return angle >= adjustedStartAngle && angle <= adjustedEndAngle;
+      });
+      
+      setHoveredSegment(segment || null);
+    } else {
+      setHoveredSegment(null);
+    }
+  };
+
+  const handleMouseLeave = () => {
+    setHoveredSegment(null);
+  };
+
   return (
-    <canvas
-      ref={canvasRef}
-      width={size}
-      height={size}
-      className={`distribution-chart ${className}`}
-    />
+    <TooltipProvider>
+      <Tooltip open={!!hoveredSegment}>
+        <TooltipTrigger asChild>
+          <canvas
+            ref={canvasRef}
+            width={size}
+            height={size}
+            className={`distribution-chart ${className}`}
+            onMouseMove={handleMouseMove}
+            onMouseLeave={handleMouseLeave}
+          />
+        </TooltipTrigger>
+        {hoveredSegment && (
+          <TooltipContent className="flex flex-col gap-1">
+            <div className="flex items-center gap-2">
+              <div 
+                className="w-3 h-3 rounded-full" 
+                style={{ backgroundColor: hoveredSegment.color }}
+              />
+              <span className="font-medium">{hoveredSegment.coin.name}</span>
+            </div>
+            <div className="text-xs text-muted-foreground">
+              {formatPercentage(hoveredSegment.percentage, 1)} of portfolio
+            </div>
+          </TooltipContent>
+        )}
+      </Tooltip>
+    </TooltipProvider>
   );
 };
 

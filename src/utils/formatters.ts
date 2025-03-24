@@ -1,9 +1,17 @@
 
 // Format numbers to currency string
-export const formatCurrency = (value: number, currency: 'USD' | 'CAD' = 'USD'): string => {
-  return new Intl.NumberFormat('en-US', {
+export const formatCurrency = (value: number, currency: 'USD' | 'CAD' | 'INR' = 'USD'): string => {
+  const currencyConfig = {
+    'USD': { locale: 'en-US', currency: 'USD' },
+    'CAD': { locale: 'en-CA', currency: 'CAD' },
+    'INR': { locale: 'en-IN', currency: 'INR' }
+  };
+  
+  const config = currencyConfig[currency];
+  
+  return new Intl.NumberFormat(config.locale, {
     style: 'currency',
-    currency: currency,
+    currency: config.currency,
     minimumFractionDigits: 2,
     maximumFractionDigits: 2
   }).format(value);
@@ -57,5 +65,13 @@ export const convertToCAD = (usdValue: number): number => {
   // Using a fixed exchange rate of 1 USD = 1.36 CAD for simplicity
   // In a real app, this would come from an API
   const exchangeRate = 1.36;
+  return usdValue * exchangeRate;
+};
+
+// Convert USD to INR
+export const convertToINR = (usdValue: number): number => {
+  // Using a fixed exchange rate of 1 USD = 83.5 INR for simplicity
+  // In a real app, this would come from an API
+  const exchangeRate = 83.5;
   return usdValue * exchangeRate;
 };
