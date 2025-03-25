@@ -64,7 +64,7 @@ export const formatDate = (date: Date): string => {
 export const convertToCAD = (usdValue: number): number => {
   // Using a fixed exchange rate of 1 USD = 1.36 CAD for simplicity
   // In a real app, this would come from an API
-  const exchangeRate = 1.36;
+  const exchangeRate = 1.43;
   return usdValue * exchangeRate;
 };
 
@@ -72,6 +72,6 @@ export const convertToCAD = (usdValue: number): number => {
 export const convertToINR = (usdValue: number): number => {
   // Using a fixed exchange rate of 1 USD = 83.5 INR for simplicity
   // In a real app, this would come from an API
-  const exchangeRate = 83.5;
+  const exchangeRate = 85.74;
   return usdValue * exchangeRate;
 };
