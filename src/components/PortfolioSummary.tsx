@@ -83,7 +83,8 @@ const PortfolioSummary = ({
                 .sort((a, b) => (b.total_value || 0) - (a.total_value || 0))
                 .slice(0, 5)
                 .map(coin => {
-                  const percentage = ((coin.total_value || 0) / totalValue) * 100;
+                  // Calculate percentage based on original USD values, not converted values
+                  const percentage = ((coin.total_value || 0) / (coins.reduce((sum, c) => sum + (c.total_value || 0), 0))) * 100;
                   return (
                     <div key={coin.id} className="flex items-center gap-2">
                       <img 

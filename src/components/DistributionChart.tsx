@@ -53,7 +53,7 @@ const DistributionChart: React.FC<DistributionChartProps> = ({
     canvas.style.width = `${size}px`;
     canvas.style.height = `${size}px`;
 
-    // Calculate total value
+    // Calculate total value - use original USD values regardless of currency display
     const totalValue = coins.reduce(
       (sum, coin) => sum + (coin.total_value || 0),
       0

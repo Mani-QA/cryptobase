@@ -25,7 +25,8 @@ const CoinCard = ({
   const isPositive = (coin.price_change_percentage_24h || 0) >= 0;
   const changeColor = isPositive ? "text-positive" : "text-negative";
   
-  // Calculate portfolio percentage
+  // Calculate portfolio percentage based on USD values, not converted values
+  // This ensures percentages are consistent across all currency displays
   const portfolioPercentage = totalPortfolioValue > 0 
     ? ((coin.total_value || 0) / totalPortfolioValue) * 100 
     : 0;

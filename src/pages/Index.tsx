@@ -296,6 +296,7 @@ const Index = () => {
                 key={coin.id}
                 coin={coin}
                 className={`animate-fade-up opacity-0`}
+                // Pass the original USD totalValue for consistent percentage calculations
                 totalPortfolioValue={portfolioData?.totalValue || 0}
                 currencyType={currencyType}
               />
