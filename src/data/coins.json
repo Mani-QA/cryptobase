@@ -57,776 +57,446 @@
     "stellar": 250.00,
     "bittensor": 3.00
   },
-  "mockCoins": [
-    {
-      "id": "bitcoin",
+  "coinMetadata": {
+    "bitcoin": {
       "symbol": "btc",
       "name": "Bitcoin",
       "image": "https://assets.coingecko.com/coins/images/1/large/bitcoin.png",
       "current_price": 39840.21,
       "price_change_percentage_24h": 2.1,
-      "price_change_percentage_7d_in_currency": 5.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 1.14,
-      "total_value": 45417.84
+      "price_change_percentage_7d_in_currency": 5.3
     },
-    {
-      "id": "ethereum",
+    "ethereum": {
       "symbol": "eth",
       "name": "Ethereum",
       "image": "https://assets.coingecko.com/coins/images/279/large/ethereum.png",
       "current_price": 2104.32,
       "price_change_percentage_24h": 3.2,
-      "price_change_percentage_7d_in_currency": 7.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 12.17,
-      "total_value": 25609.57
+      "price_change_percentage_7d_in_currency": 7.5
     },
-    {
-      "id": "solana",
+    "solana": {
       "symbol": "sol",
       "name": "Solana",
       "image": "https://assets.coingecko.com/coins/images/4128/large/solana.png",
       "current_price": 104.23,
       "price_change_percentage_24h": 5.7,
-      "price_change_percentage_7d_in_currency": 12.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 97.65,
-      "total_value": 10178.06
+      "price_change_percentage_7d_in_currency": 12.3
     },
-    {
-      "id": "binancecoin",
+    "binancecoin": {
       "symbol": "bnb",
       "name": "BNB",
       "image": "https://assets.coingecko.com/coins/images/825/large/bnb-icon2_2x.png",
       "current_price": 566.78,
       "price_change_percentage_24h": 1.8,
-      "price_change_percentage_7d_in_currency": 4.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 1.47,
-      "total_value": 833.17
+      "price_change_percentage_7d_in_currency": 4.6
     },
-    {
-      "id": "chainlink",
+    "chainlink": {
       "symbol": "link",
       "name": "Chainlink",
       "image": "https://assets.coingecko.com/coins/images/877/large/chainlink-new-logo.png",
       "current_price": 13.92,
       "price_change_percentage_24h": 1.3,
-      "price_change_percentage_7d_in_currency": 4.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 276.62,
-      "total_value": 3850.55
+      "price_change_percentage_7d_in_currency": 4.2
     },
-    {
-      "id": "polygon",
+    "polygon": {
       "symbol": "matic",
       "name": "Polygon",
       "image": "https://assets.coingecko.com/coins/images/4713/large/matic-token-icon.png",
       "current_price": 0.82,
       "price_change_percentage_24h": -2.3,
-      "price_change_percentage_7d_in_currency": -1.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 5877.54,
-      "total_value": 4819.58
+      "price_change_percentage_7d_in_currency": -1.1
     },
-    {
-      "id": "the-graph",
+    "the-graph": {
       "symbol": "grt",
       "name": "The Graph",
       "image": "https://assets.coingecko.com/coins/images/13397/large/Graph_Token.png",
       "current_price": 0.186,
       "price_change_percentage_24h": 2.5,
-      "price_change_percentage_7d_in_currency": 6.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 10486.65,
-      "total_value": 1950.52
+      "price_change_percentage_7d_in_currency": 6.8
     },
-    {
-      "id": "avalanche",
+    "avalanche": {
       "symbol": "avax",
       "name": "Avalanche",
       "image": "https://assets.coingecko.com/coins/images/12559/large/Avalanche_Circle_RedWhite_Trans.png",
       "current_price": 22.17,
       "price_change_percentage_24h": 4.1,
-      "price_change_percentage_7d_in_currency": 9.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 186.00,
-      "total_value": 4123.62
+      "price_change_percentage_7d_in_currency": 9.2
     },
-    {
-      "id": "fetch-ai",
+    "fetch-ai": {
       "symbol": "fet",
       "name": "Fetch.ai",
       "image": "https://assets.coingecko.com/coins/images/5681/large/Fetch.jpg",
       "current_price": 1.15,
       "price_change_percentage_24h": 3.8,
-      "price_change_percentage_7d_in_currency": 9.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 4403.95,
-      "total_value": 5064.54
+      "price_change_percentage_7d_in_currency": 9.6
     },
-    {
-      "id": "near",
+    "near": {
       "symbol": "near",
       "name": "NEAR Protocol",
       "image": "https://assets.coingecko.com/coins/images/10365/large/near.jpg",
       "current_price": 3.21,
       "price_change_percentage_24h": 2.7,
-      "price_change_percentage_7d_in_currency": 5.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 979.64,
-      "total_value": 3144.64
+      "price_change_percentage_7d_in_currency": 5.6
     },
-    {
-      "id": "injective-protocol",
+    "injective-protocol": {
       "symbol": "inj",
       "name": "Injective",
       "image": "https://assets.coingecko.com/coins/images/12882/large/Secondary_Symbol.png",
       "current_price": 26.73,
       "price_change_percentage_24h": 4.2,
-      "price_change_percentage_7d_in_currency": 10.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 205.16,
-      "total_value": 5483.93
+      "price_change_percentage_7d_in_currency": 10.5
     },
-    {
-      "id": "cardano",
+    "cardano": {
       "symbol": "ada",
       "name": "Cardano",
       "image": "https://assets.coingecko.com/coins/images/975/large/cardano.png",
       "current_price": 0.43,
       "price_change_percentage_24h": -1.2,
-      "price_change_percentage_7d_in_currency": -3.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 6055.38,
-      "total_value": 2603.81
+      "price_change_percentage_7d_in_currency": -3.1
     },
-    {
-      "id": "dogwifhat",
+    "dogwifhat": {
       "symbol": "wif",
       "name": "Dogwifhat",
       "image": "https://assets.coingecko.com/coins/images/33410/large/wif.png",
       "current_price": 2.16,
       "price_change_percentage_24h": 5.3,
-      "price_change_percentage_7d_in_currency": 11.7,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 551.00,
-      "total_value": 1190.16
+      "price_change_percentage_7d_in_currency": 11.7
     },
-    {
-      "id": "uniswap",
+    "uniswap": {
       "symbol": "uni",
       "name": "Uniswap",
       "image": "https://assets.coingecko.com/coins/images/12504/large/uni.jpg",
       "current_price": 9.54,
       "price_change_percentage_24h": 2.8,
-      "price_change_percentage_7d_in_currency": 6.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 310.88,
-      "total_value": 2965.79
+      "price_change_percentage_7d_in_currency": 6.2
     },
-    {
-      "id": "polkadot",
+    "polkadot": {
       "symbol": "dot",
       "name": "Polkadot",
       "image": "https://assets.coingecko.com/coins/images/12171/large/polkadot.png",
       "current_price": 6.89,
       "price_change_percentage_24h": -0.8,
-      "price_change_percentage_7d_in_currency": 2.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 353.67,
-      "total_value": 2436.79
+      "price_change_percentage_7d_in_currency": 2.2
     },
-    {
-      "id": "render-token",
+    "render-token": {
       "symbol": "rndr",
       "name": "Render",
       "image": "https://assets.coingecko.com/coins/images/11636/large/rndr.png",
       "current_price": 4.86,
       "price_change_percentage_24h": 3.4,
-      "price_change_percentage_7d_in_currency": 8.9,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 779.76,
-      "total_value": 3789.63
+      "price_change_percentage_7d_in_currency": 8.9
     },
-    {
-      "id": "dogecoin",
+    "dogecoin": {
       "symbol": "doge",
       "name": "Dogecoin",
       "image": "https://assets.coingecko.com/coins/images/5/large/dogecoin.png",
       "current_price": 0.12,
       "price_change_percentage_24h": 1.9,
-      "price_change_percentage_7d_in_currency": 4.7,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 8235.71,
-      "total_value": 988.29
+      "price_change_percentage_7d_in_currency": 4.7
     },
-    {
-      "id": "xrp",
+    "xrp": {
       "symbol": "xrp",
       "name": "XRP",
       "image": "https://assets.coingecko.com/coins/images/44/large/xrp-symbol-white-128.png",
       "current_price": 0.53,
       "price_change_percentage_24h": 1.5,
-      "price_change_percentage_7d_in_currency": 3.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 3057.90,
-      "total_value": 1620.69
+      "price_change_percentage_7d_in_currency": 3.8
     },
-    {
-      "id": "pepe",
+    "pepe": {
       "symbol": "pepe",
       "name": "Pepe",
       "image": "https://assets.coingecko.com/coins/images/29850/large/pepe-token.jpeg",
       "current_price": 0.000009,
       "price_change_percentage_24h": 4.3,
-      "price_change_percentage_7d_in_currency": 10.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 206653722.78,
-      "total_value": 1859.88
+      "price_change_percentage_7d_in_currency": 10.2
     },
-    {
-      "id": "sui",
+    "sui": {
       "symbol": "sui",
       "name": "Sui",
       "image": "https://assets.coingecko.com/coins/images/26375/large/sui_asset.jpeg",
       "current_price": 1.22,
       "price_change_percentage_24h": 3.1,
-      "price_change_percentage_7d_in_currency": 7.4,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 888.90,
-      "total_value": 1084.46
+      "price_change_percentage_7d_in_currency": 7.4
     },
-    {
-      "id": "vechain",
+    "vechain": {
       "symbol": "vet",
       "name": "VeChain",
       "image": "https://assets.coingecko.com/coins/images/1167/large/VET_Token_Icon.png",
       "current_price": 0.029,
       "price_change_percentage_24h": 1.7,
-      "price_change_percentage_7d_in_currency": 4.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 30309.00,
-      "total_value": 878.96
+      "price_change_percentage_7d_in_currency": 4.3
     },
-    {
-      "id": "decentraland",
+    "decentraland": {
       "symbol": "mana",
       "name": "Decentraland",
       "image": "https://assets.coingecko.com/coins/images/878/large/decentraland-mana.png",
       "current_price": 0.42,
       "price_change_percentage_24h": 2.3,
-      "price_change_percentage_7d_in_currency": 5.4,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 1892.55,
-      "total_value": 794.87
+      "price_change_percentage_7d_in_currency": 5.4
     },
-    {
-      "id": "sonic-token",
+    "sonic-token": {
       "symbol": "sonic",
       "name": "Sonic",
       "image": "https://assets.coingecko.com/coins/images/31952/large/sonic.png",
       "current_price": 0.27,
       "price_change_percentage_24h": 3.6,
-      "price_change_percentage_7d_in_currency": 8.4,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 3781.90,
-      "total_value": 1021.11
+      "price_change_percentage_7d_in_currency": 8.4
     },
-    {
-      "id": "bonk",
+    "bonk": {
       "symbol": "bonk",
       "name": "Bonk",
       "image": "https://assets.coingecko.com/coins/images/28600/large/bonk.jpg",
       "current_price": 0.00002,
       "price_change_percentage_24h": 5.2,
-      "price_change_percentage_7d_in_currency": 11.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 7002405.54,
-      "total_value": 140.05
+      "price_change_percentage_7d_in_currency": 11.3
     },
-    {
-      "id": "stacks",
+    "stacks": {
       "symbol": "stx",
       "name": "Stacks",
       "image": "https://assets.coingecko.com/coins/images/2069/large/Stacks_logo.png",
       "current_price": 1.98,
       "price_change_percentage_24h": 2.7,
-      "price_change_percentage_7d_in_currency": 6.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 300.12,
-      "total_value": 594.24
+      "price_change_percentage_7d_in_currency": 6.3
     },
-    {
-      "id": "sushi",
+    "sushi": {
       "symbol": "sushi",
       "name": "Sushi",
       "image": "https://assets.coingecko.com/coins/images/12271/large/512x512_Logo_no_chop.png",
       "current_price": 1.14,
       "price_change_percentage_24h": 1.8,
-      "price_change_percentage_7d_in_currency": 4.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 2048.99,
-      "total_value": 2335.85
+      "price_change_percentage_7d_in_currency": 4.5
     },
-    {
-      "id": "celestia",
+    "celestia": {
       "symbol": "tia",
       "name": "Celestia",
       "image": "https://assets.coingecko.com/coins/images/31967/large/tia.jpg",
       "current_price": 6.36,
       "price_change_percentage_24h": 4.3,
-      "price_change_percentage_7d_in_currency": 10.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 474.41,
-      "total_value": 3017.25
+      "price_change_percentage_7d_in_currency": 10.1
     },
-    {
-      "id": "hedera",
+    "hedera": {
       "symbol": "hbar",
       "name": "Hedera",
       "image": "https://assets.coingecko.com/coins/images/3688/large/hbar.png",
       "current_price": 0.068,
       "price_change_percentage_24h": 1.5,
-      "price_change_percentage_7d_in_currency": 3.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 2706.00,
-      "total_value": 184.01
+      "price_change_percentage_7d_in_currency": 3.8
     },
-    {
-      "id": "manta-network",
+    "manta-network": {
       "symbol": "manta",
       "name": "Manta Network",
       "image": "https://assets.coingecko.com/coins/images/30625/large/manta.png",
       "current_price": 2.64,
       "price_change_percentage_24h": 3.2,
-      "price_change_percentage_7d_in_currency": 7.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 529.72,
-      "total_value": 1398.46
+      "price_change_percentage_7d_in_currency": 7.8
     },
-    {
-      "id": "cosmos",
+    "cosmos": {
       "symbol": "atom",
       "name": "Cosmos Hub",
       "image": "https://assets.coingecko.com/coins/images/1481/large/cosmos_hub.png",
       "current_price": 7.61,
       "price_change_percentage_24h": 1.6,
-      "price_change_percentage_7d_in_currency": 4.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 60.43,
-      "total_value": 459.87
+      "price_change_percentage_7d_in_currency": 4.1
     },
-    {
-      "id": "tungsten",
+    "tungsten": {
       "symbol": "w",
       "name": "Tungsten",
       "image": "https://assets.coingecko.com/coins/images/31547/large/W.png",
       "current_price": 2.34,
       "price_change_percentage_24h": 3.4,
-      "price_change_percentage_7d_in_currency": 8.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 800.00,
-      "total_value": 1872.00
+      "price_change_percentage_7d_in_currency": 8.2
     },
-    {
-      "id": "jupiter",
+    "jupiter": {
       "symbol": "jup",
       "name": "Jupiter",
       "image": "https://assets.coingecko.com/coins/images/34467/large/jup.png",
       "current_price": 0.86,
       "price_change_percentage_24h": 4.7,
-      "price_change_percentage_7d_in_currency": 10.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 907.49,
-      "total_value": 780.44
+      "price_change_percentage_7d_in_currency": 10.8
     },
-    {
-      "id": "optimism",
+    "optimism": {
       "symbol": "op",
       "name": "Optimism",
       "image": "https://assets.coingecko.com/coins/images/25244/large/Optimism.png",
       "current_price": 2.98,
       "price_change_percentage_24h": 2.4,
-      "price_change_percentage_7d_in_currency": 5.7,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 423.01,
-      "total_value": 1260.57
+      "price_change_percentage_7d_in_currency": 5.7
     },
-    {
-      "id": "arkhia",
+    "arkhia": {
       "symbol": "arkm",
       "name": "Arkhia",
       "image": "https://assets.coingecko.com/coins/images/30493/large/arkhia.png",
       "current_price": 1.53,
       "price_change_percentage_24h": 3.1,
-      "price_change_percentage_7d_in_currency": 7.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 215.28,
-      "total_value": 329.38
+      "price_change_percentage_7d_in_currency": 7.5
     },
-    {
-      "id": "saga-protocol",
+    "saga-protocol": {
       "symbol": "saga",
       "name": "Saga",
       "image": "https://assets.coingecko.com/coins/images/31093/large/Group_5.png",
       "current_price": 2.16,
       "price_change_percentage_24h": 3.8,
-      "price_change_percentage_7d_in_currency": 9.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 0.07,
-      "total_value": 0.15
+      "price_change_percentage_7d_in_currency": 9.1
     },
-    {
-      "id": "ethena",
+    "ethena": {
       "symbol": "ethfi",
       "name": "Ethena",
       "image": "https://assets.coingecko.com/coins/images/36182/large/token_blue_white.png",
       "current_price": 0.72,
       "price_change_percentage_24h": 1.3,
-      "price_change_percentage_7d_in_currency": 3.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 98.40,
-      "total_value": 70.85
+      "price_change_percentage_7d_in_currency": 3.5
     },
-    {
-      "id": "floki",
+    "floki": {
       "symbol": "floki",
       "name": "FLOKI",
       "image": "https://assets.coingecko.com/coins/images/16746/large/FLOKI.png",
       "current_price": 0.0001,
       "price_change_percentage_24h": 3.2,
-      "price_change_percentage_7d_in_currency": 7.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 2778454.00,
-      "total_value": 277.85
+      "price_change_percentage_7d_in_currency": 7.6
     },
-    {
-      "id": "book-of-meme",
+    "book-of-meme": {
       "symbol": "bome",
       "name": "Book of Meme",
       "image": "https://assets.coingecko.com/coins/images/35311/large/Logo2.png",
       "current_price": 0.0043,
       "price_change_percentage_24h": 4.5,
-      "price_change_percentage_7d_in_currency": 10.4,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 26046.00,
-      "total_value": 112.00
+      "price_change_percentage_7d_in_currency": 10.4
     },
-    {
-      "id": "internet-computer",
+    "internet-computer": {
       "symbol": "icp",
       "name": "Internet Computer",
       "image": "https://assets.coingecko.com/coins/images/14495/large/Internet_Computer_logo.png",
       "current_price": 11.28,
       "price_change_percentage_24h": 2.1,
-      "price_change_percentage_7d_in_currency": 5.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 21.53,
-      "total_value": 242.86
+      "price_change_percentage_7d_in_currency": 5.2
     },
-    {
-      "id": "filecoin",
+    "filecoin": {
       "symbol": "fil",
       "name": "Filecoin",
       "image": "https://assets.coingecko.com/coins/images/12817/large/filecoin.png",
       "current_price": 5.96,
       "price_change_percentage_24h": 1.7,
-      "price_change_percentage_7d_in_currency": 4.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 18.11,
-      "total_value": 107.94
+      "price_change_percentage_7d_in_currency": 4.2
     },
-    {
-      "id": "joe",
+    "joe": {
       "symbol": "joe",
       "name": "JOE",
       "image": "https://assets.coingecko.com/coins/images/17569/large/joe_200x200.png",
       "current_price": 0.59,
       "price_change_percentage_24h": 2.2,
-      "price_change_percentage_7d_in_currency": 5.3,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 240.00,
-      "total_value": 141.60
+      "price_change_percentage_7d_in_currency": 5.3
     },
-    {
-      "id": "immutable-x",
+    "immutable-x": {
       "symbol": "imx",
       "name": "Immutable",
       "image": "https://assets.coingecko.com/coins/images/17233/large/immutable.jpeg",
       "current_price": 2.98,
       "price_change_percentage_24h": 2.7,
-      "price_change_percentage_7d_in_currency": 6.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 50.00,
-      "total_value": 149.00
+      "price_change_percentage_7d_in_currency": 6.5
     },
-    {
-      "id": "enjin-coin",
+    "enjin-coin": {
       "symbol": "enj",
       "name": "Enjin Coin",
       "image": "https://assets.coingecko.com/coins/images/1102/large/enjin-coin-logo.png",
       "current_price": 0.42,
       "price_change_percentage_24h": 1.2,
-      "price_change_percentage_7d_in_currency": 3.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 1500.49,
-      "total_value": 630.21
+      "price_change_percentage_7d_in_currency": 3.1
     },
-    {
-      "id": "elrond-erd-2",
+    "elrond-erd-2": {
       "symbol": "egld",
       "name": "MultiversX",
       "image": "https://assets.coingecko.com/coins/images/12335/large/egld-token-logo.png",
       "current_price": 45.78,
       "price_change_percentage_24h": 2.6,
-      "price_change_percentage_7d_in_currency": 6.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 89.75,
-      "total_value": 4108.76
+      "price_change_percentage_7d_in_currency": 6.1
     },
-    {
-      "id": "the-open-network",
+    "the-open-network": {
       "symbol": "ton",
       "name": "Toncoin",
       "image": "https://assets.coingecko.com/coins/images/17980/large/ton_symbol.png",
       "current_price": 5.72,
       "price_change_percentage_24h": 2.1,
-      "price_change_percentage_7d_in_currency": 5.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 144.00,
-      "total_value": 823.68
+      "price_change_percentage_7d_in_currency": 5.2
     },
-    {
-      "id": "fio-protocol",
+    "fio-protocol": {
       "symbol": "fio",
       "name": "FIO Protocol",
       "image": "https://assets.coingecko.com/coins/images/11723/large/FIO.png",
       "current_price": 0.027,
       "price_change_percentage_24h": 1.4,
-      "price_change_percentage_7d_in_currency": 3.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 3456.92,
-      "total_value": 93.34
+      "price_change_percentage_7d_in_currency": 3.6
     },
-    {
-      "id": "pancakeswap-token",
+    "pancakeswap-token": {
       "symbol": "cake",
       "name": "PancakeSwap",
       "image": "https://assets.coingecko.com/coins/images/12632/large/pancakeswap-cake-logo.png",
       "current_price": 2.67,
       "price_change_percentage_24h": 1.8,
-      "price_change_percentage_7d_in_currency": 4.5,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 353.00,
-      "total_value": 942.51
+      "price_change_percentage_7d_in_currency": 4.5
     },
-    {
-      "id": "ondo-finance",
+    "ondo-finance": {
       "symbol": "ondo",
       "name": "Ondo Finance",
       "image": "https://assets.coingecko.com/coins/images/31255/large/logomark-black_%282%29.png",
       "current_price": 0.89,
       "price_change_percentage_24h": 2.3,
-      "price_change_percentage_7d_in_currency": 5.6,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 2156.86,
-      "total_value": 1919.61
+      "price_change_percentage_7d_in_currency": 5.6
     },
-    {
-      "id": "nexo",
+    "nexo": {
       "symbol": "nexo",
       "name": "NEXO",
       "image": "https://assets.coingecko.com/coins/images/3695/large/nexo.png",
       "current_price": 0.97,
       "price_change_percentage_24h": 1.5,
-      "price_change_percentage_7d_in_currency": 3.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 614.00,
-      "total_value": 595.58
+      "price_change_percentage_7d_in_currency": 3.8
     },
-    {
-      "id": "algorand",
+    "algorand": {
       "symbol": "algo",
       "name": "Algorand",
       "image": "https://assets.coingecko.com/coins/images/4380/large/download.png",
       "current_price": 0.17,
       "price_change_percentage_24h": 1.2,
-      "price_change_percentage_7d_in_currency": 3.1,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 4225.00,
-      "total_value": 718.25
+      "price_change_percentage_7d_in_currency": 3.1
     },
-    {
-      "id": "melania-trump",
+    "melania-trump": {
       "symbol": "trump",
       "name": "Melania Trump",
       "image": "https://assets.coingecko.com/coins/images/31341/large/melania_trump.jpeg",
       "current_price": 1.43,
       "price_change_percentage_24h": 4.8,
-      "price_change_percentage_7d_in_currency": 11.2,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 19.37,
-      "total_value": 27.70
+      "price_change_percentage_7d_in_currency": 11.2
     },
-    {
-      "id": "proton",
+    "proton": {
       "symbol": "xpr",
       "name": "Proton",
       "image": "https://assets.coingecko.com/coins/images/11469/large/XPR.png",
       "current_price": 0.0011,
       "price_change_percentage_24h": 1.3,
-      "price_change_percentage_7d_in_currency": 3.4,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 72779.00,
-      "total_value": 80.06
+      "price_change_percentage_7d_in_currency": 3.4
     },
-    {
-      "id": "usd-coin",
+    "usd-coin": {
       "symbol": "usdc",
       "name": "USD Coin",
       "image": "https://assets.coingecko.com/coins/images/6319/large/usdc.png",
       "current_price": 1.00,
       "price_change_percentage_24h": 0.0,
-      "price_change_percentage_7d_in_currency": 0.0,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 677.54,
-      "total_value": 677.54
+      "price_change_percentage_7d_in_currency": 0.0
     },
-    {
-      "id": "stellar",
+    "stellar": {
       "symbol": "xlm",
       "name": "Stellar",
       "image": "https://assets.coingecko.com/coins/images/100/large/stellar.png",
       "current_price": 0.11,
       "price_change_percentage_24h": 1.1,
-      "price_change_percentage_7d_in_currency": 2.8,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 250.00,
-      "total_value": 27.50
+      "price_change_percentage_7d_in_currency": 2.8
     },
-    {
-      "id": "bittensor",
+    "bittensor": {
       "symbol": "tao",
       "name": "Bittensor",
       "image": "https://assets.coingecko.com/coins/images/29053/large/Bittensor_Icon_BLK.png",
       "current_price": 476.32,
       "price_change_percentage_24h": 3.7,
-      "price_change_percentage_7d_in_currency": 8.9,
-      "sparkline_in_7d": {
-        "price": []
-      },
-      "quantity": 3.00,
-      "total_value": 1428.96
+      "price_change_percentage_7d_in_currency": 8.9
     }
-  ]
+  }
 }

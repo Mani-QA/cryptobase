@@ -26,6 +26,7 @@ export interface PortfolioSummary {
 
 // Get mock portfolio data from JSON file
 const mockPortfolio: { [key: string]: number } = coinsData.mockPortfolio;
+const coinMetadata: { [key: string]: any } = coinsData.coinMetadata;
 
 // Function to fetch coin data from CoinGecko API
 export const fetchCoinData = async (): Promise<PortfolioSummary> => {
@@ -80,18 +81,35 @@ export const fetchCoinData = async (): Promise<PortfolioSummary> => {
 
 // Generate mock data for testing or when API fails
 const generateMockData = (): PortfolioSummary => {
-  // Get mock coins from JSON file and generate sparkline data
-  const mockCoins: Coin[] = coinsData.mockCoins.map(coin => {
-    let basePrice = coin.current_price;
+  // Generate mock coin data from our metadata and portfolio
+  const mockCoins: Coin[] = Object.keys(mockPortfolio).map(coinId => {
+    const metadata = coinMetadata[coinId];
+    if (!metadata) {
+      console.error(`Missing metadata for coin: ${coinId}`);
+      return null;
+    }
+    
+    const quantity = mockPortfolio[coinId];
+    const total_value = metadata.current_price * quantity;
+    
+    let basePrice = metadata.current_price;
     let variation = basePrice * 0.1; // 10% variation
     
     return {
-      ...coin,
+      id: coinId,
+      symbol: metadata.symbol,
+      name: metadata.name,
+      image: metadata.image,
+      current_price: metadata.current_price,
+      price_change_percentage_24h: metadata.price_change_percentage_24h,
+      price_change_percentage_7d_in_currency: metadata.price_change_percentage_7d_in_currency,
       sparkline_in_7d: {
         price: generateSparklineData(basePrice, variation, 7)
-      }
+      },
+      quantity,
+      total_value
     };
-  });
+  }).filter(Boolean) as Coin[];
 
   // Calculate total value and changes
   let totalValue = 0;
