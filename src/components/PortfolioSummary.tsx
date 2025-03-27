@@ -28,6 +28,12 @@ const PortfolioSummary = ({
   const isPositive = dailyChangePercentage >= 0;
   const changeColor = isPositive ? "text-positive" : "text-negative";
 
+  // For distribution chart, we use the original USD values to calculate percentages
+  // since percentage distributions should be the same regardless of currency
+  const getOriginalTotalValue = () => {
+    return coins.reduce((total, coin) => total + (coin.total_value || 0), 0);
+  };
+
   return (
     <Card className={`overflow-hidden ${className}`}>
       <CardContent className="p-6">
@@ -83,7 +89,12 @@ const PortfolioSummary = ({
                 .sort((a, b) => (b.total_value || 0) - (a.total_value || 0))
                 .slice(0, 5)
                 .map(coin => {
-                  const percentage = ((coin.total_value || 0) / totalValue) * 100;
+                  // Calculate percentage based on original USD values
+                  const originalTotal = getOriginalTotalValue();
+                  const percentage = originalTotal > 0 
+                    ? ((coin.total_value || 0) / originalTotal) * 100 
+                    : 0;
+                    
                   return (
                     <div key={coin.id} className="flex items-center gap-2">
                       <img 

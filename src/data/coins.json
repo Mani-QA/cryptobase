@@ -1,61 +1,61 @@
 
 {
   "mockPortfolio": {
-    "bitcoin": 1.14,
-    "ethereum": 12.17,
-    "solana": 97.65,
-    "binancecoin": 1.47,
-    "chainlink": 276.62,
-    "polygon": 5877.54,
-    "the-graph": 10486.65,
-    "avalanche": 186.00,
-    "fetch-ai": 4403.95,
+    "btc": 1.14,
+    "eth": 12.17,
+    "sol": 97.65,
+    "bnb": 1.47,
+    "link": 276.62,
+    "matic": 5877.54,
+    "grt": 10486.65,
+    "avax": 186.00,
+    "fet": 4403.95,
     "near": 979.64,
-    "injective-protocol": 205.16,
-    "cardano": 6055.38,
-    "dogwifhat": 551.00,
-    "uniswap": 310.88,
-    "polkadot": 353.67,
-    "render-token": 779.76,
-    "dogecoin": 8235.71,
+    "inj": 205.16,
+    "ada": 6055.38,
+    "wif": 551.00,
+    "uni": 310.88,
+    "dot": 353.67,
+    "rndr": 779.76,
+    "doge": 8235.71,
     "xrp": 3057.90,
     "pepe": 206653722.78,
     "sui": 888.90,
-    "vechain": 30309.00,
-    "decentraland": 1892.55,
-    "sonic-token": 3781.90,
+    "vet": 30309.00,
+    "mana": 1892.55,
+    "sonic": 3781.90,
     "bonk": 7002405.54,
-    "stacks": 300.12,
+    "stx": 300.12,
     "sushi": 2048.99,
-    "celestia": 474.41,
-    "hedera": 2706.00,
-    "manta-network": 529.72,
-    "cosmos": 60.43,
-    "tungsten": 800.00,
-    "jupiter": 907.49,
-    "optimism": 423.01,
-    "arkhia": 215.28,
-    "saga-protocol": 0.07,
-    "ethena": 98.40,
+    "tia": 474.41,
+    "hbar": 2706.00,
+    "manta": 529.72,
+    "atom": 60.43,
+    "w": 800.00,
+    "jup": 907.49,
+    "op": 423.01,
+    "arkm": 215.28,
+    "saga": 0.07,
+    "ethfi": 98.40,
     "floki": 2778454.00,
-    "book-of-meme": 26046.00,
-    "internet-computer": 21.53,
-    "filecoin": 18.11,
+    "bome": 26046.00,
+    "icp": 21.53,
+    "fil": 18.11,
     "joe": 240.00,
-    "immutable-x": 50.00,
-    "enjin-coin": 1500.49,
-    "elrond-erd-2": 89.75,
-    "the-open-network": 144.00,
-    "fio-protocol": 3456.92,
-    "pancakeswap-token": 353.00,
-    "ondo-finance": 2156.86,
+    "imx": 50.00,
+    "enj": 1500.49,
+    "egld": 89.75,
+    "ton": 144.00,
+    "fio": 3456.92,
+    "cake": 353.00,
+    "ondo": 2156.86,
     "nexo": 614.00,
-    "algorand": 4225.00,
-    "melania-trump": 19.37,
-    "proton": 72779.00,
-    "usd-coin": 677.54,
-    "stellar": 250.00,
-    "bittensor": 3.00
+    "algo": 4225.00,
+    "melania": 19.37,
+    "xpr": 72779.00,
+    "usdc": 677.54,
+    "xlm": 250.00,
+    "tao": 3.00
   },
   "mockCoins": [
     {
@@ -68,9 +68,7 @@
       "price_change_percentage_7d_in_currency": 5.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 1.14,
-      "total_value": 45417.84
+      }
     },
     {
       "id": "ethereum",
@@ -82,9 +80,7 @@
       "price_change_percentage_7d_in_currency": 7.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 12.17,
-      "total_value": 25609.57
+      }
     },
     {
       "id": "solana",
@@ -96,9 +92,7 @@
       "price_change_percentage_7d_in_currency": 12.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 97.65,
-      "total_value": 10178.06
+      }
     },
     {
       "id": "binancecoin",
@@ -110,9 +104,7 @@
       "price_change_percentage_7d_in_currency": 4.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 1.47,
-      "total_value": 833.17
+      }
     },
     {
       "id": "chainlink",
@@ -124,9 +116,7 @@
       "price_change_percentage_7d_in_currency": 4.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 276.62,
-      "total_value": 3850.55
+      }
     },
     {
       "id": "polygon",
@@ -138,9 +128,7 @@
       "price_change_percentage_7d_in_currency": -1.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 5877.54,
-      "total_value": 4819.58
+      }
     },
     {
       "id": "the-graph",
@@ -152,9 +140,7 @@
       "price_change_percentage_7d_in_currency": 6.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 10486.65,
-      "total_value": 1950.52
+      }
     },
     {
       "id": "avalanche",
@@ -166,9 +152,7 @@
       "price_change_percentage_7d_in_currency": 9.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 186.00,
-      "total_value": 4123.62
+      }
     },
     {
       "id": "fetch-ai",
@@ -180,9 +164,7 @@
       "price_change_percentage_7d_in_currency": 9.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 4403.95,
-      "total_value": 5064.54
+      }
     },
     {
       "id": "near",
@@ -194,9 +176,7 @@
       "price_change_percentage_7d_in_currency": 5.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 979.64,
-      "total_value": 3144.64
+      }
     },
     {
       "id": "injective-protocol",
@@ -208,9 +188,7 @@
       "price_change_percentage_7d_in_currency": 10.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 205.16,
-      "total_value": 5483.93
+      }
     },
     {
       "id": "cardano",
@@ -222,9 +200,7 @@
       "price_change_percentage_7d_in_currency": -3.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 6055.38,
-      "total_value": 2603.81
+      }
     },
     {
       "id": "dogwifhat",
@@ -236,9 +212,7 @@
       "price_change_percentage_7d_in_currency": 11.7,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 551.00,
-      "total_value": 1190.16
+      }
     },
     {
       "id": "uniswap",
@@ -250,9 +224,7 @@
       "price_change_percentage_7d_in_currency": 6.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 310.88,
-      "total_value": 2965.79
+      }
     },
     {
       "id": "polkadot",
@@ -264,9 +236,7 @@
       "price_change_percentage_7d_in_currency": 2.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 353.67,
-      "total_value": 2436.79
+      }
     },
     {
       "id": "render-token",
@@ -278,9 +248,7 @@
       "price_change_percentage_7d_in_currency": 8.9,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 779.76,
-      "total_value": 3789.63
+      }
     },
     {
       "id": "dogecoin",
@@ -292,9 +260,7 @@
       "price_change_percentage_7d_in_currency": 4.7,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 8235.71,
-      "total_value": 988.29
+      }
     },
     {
       "id": "xrp",
@@ -306,9 +272,7 @@
       "price_change_percentage_7d_in_currency": 3.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 3057.90,
-      "total_value": 1620.69
+      }
     },
     {
       "id": "pepe",
@@ -320,9 +284,7 @@
       "price_change_percentage_7d_in_currency": 10.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 206653722.78,
-      "total_value": 1859.88
+      }
     },
     {
       "id": "sui",
@@ -334,9 +296,7 @@
       "price_change_percentage_7d_in_currency": 7.4,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 888.90,
-      "total_value": 1084.46
+      }
     },
     {
       "id": "vechain",
@@ -348,9 +308,7 @@
       "price_change_percentage_7d_in_currency": 4.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 30309.00,
-      "total_value": 878.96
+      }
     },
     {
       "id": "decentraland",
@@ -362,9 +320,7 @@
       "price_change_percentage_7d_in_currency": 5.4,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 1892.55,
-      "total_value": 794.87
+      }
     },
     {
       "id": "sonic-token",
@@ -376,9 +332,7 @@
       "price_change_percentage_7d_in_currency": 8.4,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 3781.90,
-      "total_value": 1021.11
+      }
     },
     {
       "id": "bonk",
@@ -390,9 +344,7 @@
       "price_change_percentage_7d_in_currency": 11.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 7002405.54,
-      "total_value": 140.05
+      }
     },
     {
       "id": "stacks",
@@ -404,9 +356,7 @@
       "price_change_percentage_7d_in_currency": 6.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 300.12,
-      "total_value": 594.24
+      }
     },
     {
       "id": "sushi",
@@ -418,9 +368,7 @@
       "price_change_percentage_7d_in_currency": 4.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 2048.99,
-      "total_value": 2335.85
+      }
     },
     {
       "id": "celestia",
@@ -432,9 +380,7 @@
       "price_change_percentage_7d_in_currency": 10.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 474.41,
-      "total_value": 3017.25
+      }
     },
     {
       "id": "hedera",
@@ -446,9 +392,7 @@
       "price_change_percentage_7d_in_currency": 3.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 2706.00,
-      "total_value": 184.01
+      }
     },
     {
       "id": "manta-network",
@@ -460,9 +404,7 @@
       "price_change_percentage_7d_in_currency": 7.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 529.72,
-      "total_value": 1398.46
+      }
     },
     {
       "id": "cosmos",
@@ -474,9 +416,7 @@
       "price_change_percentage_7d_in_currency": 4.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 60.43,
-      "total_value": 459.87
+      }
     },
     {
       "id": "tungsten",
@@ -488,9 +428,7 @@
       "price_change_percentage_7d_in_currency": 8.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 800.00,
-      "total_value": 1872.00
+      }
     },
     {
       "id": "jupiter",
@@ -502,9 +440,7 @@
       "price_change_percentage_7d_in_currency": 10.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 907.49,
-      "total_value": 780.44
+      }
     },
     {
       "id": "optimism",
@@ -516,9 +452,7 @@
       "price_change_percentage_7d_in_currency": 5.7,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 423.01,
-      "total_value": 1260.57
+      }
     },
     {
       "id": "arkhia",
@@ -530,9 +464,7 @@
       "price_change_percentage_7d_in_currency": 7.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 215.28,
-      "total_value": 329.38
+      }
     },
     {
       "id": "saga-protocol",
@@ -544,9 +476,7 @@
       "price_change_percentage_7d_in_currency": 9.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 0.07,
-      "total_value": 0.15
+      }
     },
     {
       "id": "ethena",
@@ -558,9 +488,7 @@
       "price_change_percentage_7d_in_currency": 3.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 98.40,
-      "total_value": 70.85
+      }
     },
     {
       "id": "floki",
@@ -572,9 +500,7 @@
       "price_change_percentage_7d_in_currency": 7.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 2778454.00,
-      "total_value": 277.85
+      }
     },
     {
       "id": "book-of-meme",
@@ -586,9 +512,7 @@
       "price_change_percentage_7d_in_currency": 10.4,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 26046.00,
-      "total_value": 112.00
+      }
     },
     {
       "id": "internet-computer",
@@ -600,9 +524,7 @@
       "price_change_percentage_7d_in_currency": 5.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 21.53,
-      "total_value": 242.86
+      }
     },
     {
       "id": "filecoin",
@@ -614,9 +536,7 @@
       "price_change_percentage_7d_in_currency": 4.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 18.11,
-      "total_value": 107.94
+      }
     },
     {
       "id": "joe",
@@ -628,9 +548,7 @@
       "price_change_percentage_7d_in_currency": 5.3,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 240.00,
-      "total_value": 141.60
+      }
     },
     {
       "id": "immutable-x",
@@ -642,9 +560,7 @@
       "price_change_percentage_7d_in_currency": 6.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 50.00,
-      "total_value": 149.00
+      }
     },
     {
       "id": "enjin-coin",
@@ -656,9 +572,7 @@
       "price_change_percentage_7d_in_currency": 3.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 1500.49,
-      "total_value": 630.21
+      }
     },
     {
       "id": "elrond-erd-2",
@@ -670,9 +584,7 @@
       "price_change_percentage_7d_in_currency": 6.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 89.75,
-      "total_value": 4108.76
+      }
     },
     {
       "id": "the-open-network",
@@ -684,9 +596,7 @@
       "price_change_percentage_7d_in_currency": 5.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 144.00,
-      "total_value": 823.68
+      }
     },
     {
       "id": "fio-protocol",
@@ -698,9 +608,7 @@
       "price_change_percentage_7d_in_currency": 3.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 3456.92,
-      "total_value": 93.34
+      }
     },
     {
       "id": "pancakeswap-token",
@@ -712,9 +620,7 @@
       "price_change_percentage_7d_in_currency": 4.5,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 353.00,
-      "total_value": 942.51
+      }
     },
     {
       "id": "ondo-finance",
@@ -726,9 +632,7 @@
       "price_change_percentage_7d_in_currency": 5.6,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 2156.86,
-      "total_value": 1919.61
+      }
     },
     {
       "id": "nexo",
@@ -740,9 +644,7 @@
       "price_change_percentage_7d_in_currency": 3.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 614.00,
-      "total_value": 595.58
+      }
     },
     {
       "id": "algorand",
@@ -754,13 +656,11 @@
       "price_change_percentage_7d_in_currency": 3.1,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 4225.00,
-      "total_value": 718.25
+      }
     },
     {
       "id": "melania-trump",
-      "symbol": "trump",
+      "symbol": "melania",
       "name": "Melania Trump",
       "image": "https://assets.coingecko.com/coins/images/31341/large/melania_trump.jpeg",
       "current_price": 1.43,
@@ -768,9 +668,7 @@
       "price_change_percentage_7d_in_currency": 11.2,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 19.37,
-      "total_value": 27.70
+      }
     },
     {
       "id": "proton",
@@ -782,9 +680,7 @@
       "price_change_percentage_7d_in_currency": 3.4,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 72779.00,
-      "total_value": 80.06
+      }
     },
     {
       "id": "usd-coin",
@@ -796,9 +692,7 @@
       "price_change_percentage_7d_in_currency": 0.0,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 677.54,
-      "total_value": 677.54
+      }
     },
     {
       "id": "stellar",
@@ -810,9 +704,7 @@
       "price_change_percentage_7d_in_currency": 2.8,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 250.00,
-      "total_value": 27.50
+      }
     },
     {
       "id": "bittensor",
@@ -824,9 +716,7 @@
       "price_change_percentage_7d_in_currency": 8.9,
       "sparkline_in_7d": {
         "price": []
-      },
-      "quantity": 3.00,
-      "total_value": 1428.96
+      }
     }
   ]
 }
