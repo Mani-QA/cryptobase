@@ -48,8 +48,7 @@ export const fetchCoinData = async (): Promise<PortfolioSummary> => {
     let dailyChange = 0;
 
     const enrichedCoins = data.map((coin) => {
-      // Get quantity from mockPortfolio using coin symbol
-      const quantity = mockPortfolio[coin.symbol] || 0;
+      const quantity = mockPortfolio[coin.id] || 0;
       const total_value = coin.current_price * quantity;
       
       totalValue += total_value;
@@ -83,17 +82,11 @@ export const fetchCoinData = async (): Promise<PortfolioSummary> => {
 const generateMockData = (): PortfolioSummary => {
   // Get mock coins from JSON file and generate sparkline data
   const mockCoins: Coin[] = coinsData.mockCoins.map(coin => {
-    // Get quantity from mockPortfolio using coin symbol
-    const quantity = mockPortfolio[coin.symbol] || 0;
-    const total_value = coin.current_price * quantity;
-    
     let basePrice = coin.current_price;
     let variation = basePrice * 0.1; // 10% variation
     
     return {
       ...coin,
-      quantity,
-      total_value,
       sparkline_in_7d: {
         price: generateSparklineData(basePrice, variation, 7)
       }
